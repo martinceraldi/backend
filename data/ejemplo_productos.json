@@ -1,0 +1,90 @@
+[
+  {
+    "title": "Control Remoto",
+    "description": " ",
+    "code": "CR433",
+    "price": 12,
+    "status": true,
+    "stock": 5000,
+    "category": "Electronica",
+    "thumbnails": [],
+    "id": 2
+  },
+  {
+    "title": "Central Electronica",
+    "description": " ",
+    "code": "CT-ECO",
+    "price": 70,
+    "status": true,
+    "stock": 400,
+    "category": "Electronica",
+    "thumbnails": [],
+    "id": 3
+  },
+  {
+    "title": "Semáforo",
+    "description": "",
+    "code": "SEM-04",
+    "price": 75,
+    "status": true,
+    "stock": 80,
+    "category": "Electronica",
+    "thumbnails": [],
+    "id": 4
+  },
+  {
+    "title": "Cerradura",
+    "description": "",
+    "code": "CER-CLOSS",
+    "price": 65,
+    "status": true,
+    "stock": 200,
+    "category": "Electronica",
+    "thumbnails": [],
+    "id": 5
+  },
+  {
+    "title": "Receptor",
+    "description": "",
+    "code": "RX-433",
+    "price": 30,
+    "status": true,
+    "stock": 25,
+    "category": "Electronica",
+    "thumbnails": [],
+    "id": 6
+  },
+  {
+    "title": "Alarma",
+    "description": "",
+    "code": "ALP-433",
+    "price": 85,
+    "status": true,
+    "stock": 37,
+    "category": "Electronica",
+    "thumbnails": [],
+    "id": 7
+  },
+  {
+    "title": "Modulo Rele",
+    "description": "",
+    "code": "ML-PPA",
+    "price": 13,
+    "status": true,
+    "stock": 55,
+    "category": "Electronica",
+    "thumbnails": [],
+    "id": 8
+  },
+  {
+    "title": "Icon 600",
+    "description": "",
+    "code": "KML600",
+    "price": 500,
+    "status": true,
+    "stock": 29,
+    "category": "Motores",
+    "thumbnails": [],
+    "id": 9
+  }
+]

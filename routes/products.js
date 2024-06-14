@@ -5,6 +5,15 @@ const productsRouter = Router();
 
 const products = new Productos();
 
+productsRouter.get("/products", async (req, res) => {
+  const productosGuardados = await products.getProducts();
+  res.render('index', {productosGuardados});
+});
+
+productsRouter.get("/realtimeproducts", async (req, res) => {
+  res.render('realTimeProducts');
+});
+
 productsRouter.get("/", async (req, res) => {
   const productosGuardados = await products.getProducts();
   res.status(200).send(productosGuardados);
