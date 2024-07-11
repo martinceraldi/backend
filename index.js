@@ -1,3 +1,4 @@
+import "dotenv/config";
 import express from "express";
 import cartsRouter from "./routes/carts.js";
 import productsRouter from "./routes/products.js";
@@ -5,8 +6,9 @@ import { engine } from 'express-handlebars';
 import {Server} from 'socket.io';
 import __dirname from "./util.js";
 import Productos from "./managers/productManagers.js";
+import connection from "./config/DBconnect.js";
+import config from "./config/config.js";
 
-const PORT = 8080;
 const app = express();
 app.use(express.json());
 
@@ -23,8 +25,9 @@ app.get("/", (request, response) => {
 app.use("/api/carts", cartsRouter);
 app.use("/api/products", productsRouter);
 
-const httpServer = app.listen(PORT, () => {
-  console.log("funcionando");
+const httpServer = app.listen(config.server.port, async () => {
+  await connection();
+  console.log("funcionando - puerto: ", config.server.port);
 });
 
 const socketServer = new Server(httpServer);

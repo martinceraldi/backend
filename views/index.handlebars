@@ -4,30 +4,43 @@
             <thead>
                 <tr class="table-info">
                     <th scope="col">#</th>
-                    <th scope="col">title</th>
-                    <th scope="col">description</th>
-                    <th scope="col">code</th>
-                    <th scope="col">price</th>
-                    <th scope="col">status</th>
-                    <th scope="col">stock</th>
-                    <th scope="col">category</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Actions</th>
                 </tr>
             </thead>
             <tbody>
-                {{#each productosGuardados}}
+                {{#each response.payload}}
                 <tr>
-                    <th scope="row">{{this.id}}</th>
-                    <th scope="row">{{this.title}}</th>
-                    <th scope="row">{{this.description}}</th>
-                    <th scope="row">{{this.code}}</th>
-                    <th scope="row">{{this.price}}</th>
-                    <th scope="row">{{this.status}}</th>
-                    <th scope="row">{{this.stock}}</th>
-                    <th scope="row">{{this.category}}</th>
+                    <th scope="row">{{@index}}</th>
+                    <td>{{this.title}}</td>
+                    <td>{{this.price}}</td>
+                    <td>
+                       <form action="/cart/agregarProducto" method="POST">
+                            <input type="hidden" name="productId" value="{{this._id}}">
+                            <button type="submit" class="btn btn-primary">Add to Cart</button>
+                        </form>
+                        <a href="/getproducts/{{this._id}}" class="btn btn-info">View Details</a>
+                    </td>
                 </tr>
-                {{/each}}    
+                {{/each}}
             </tbody>
         </table>
-         
+        <div class="pagination-info mt-3">
+            <p>Total Pages: {{response.totalPages}}</p>
+            <p>Current Page: {{response.page}}</p>
+            <p>Has Previous Page: {{response.hasPrevPage}}</p>
+            <p>Has Next Page: {{response.hasNextPage}}</p>
+            <p>Previous Page: {{response.prevPage}}</p>
+            <p>Next Page: {{response.nextPage}}</p>
+        </div>
+        <div class="pagination-links mt-3">
+            {{#if response.prevLink}}
+                <a href="{{response.prevLink}}" class="btn btn-primary">Previous</a>
+            {{/if}}
+            {{#if response.nextLink}}
+                <a href="{{response.nextLink}}" class="btn btn-primary">Next</a>
+            {{/if}}
+        </div>
     </div>
 </div>
